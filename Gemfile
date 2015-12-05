@@ -44,5 +44,11 @@ group :development do
   gem 'spring'
 end
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+  gem 'rails-assets-angular'
+end
+
 gem 'thin'
 gem 'websocket-rails'
+gem 'slim'
