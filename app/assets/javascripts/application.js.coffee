@@ -2,6 +2,8 @@
 #= require jquery_ujs
 #= require turbolinks
 #= require websocket_rails/main
-#= bootstrap
+#= require bootstrap
 #= require angular
+#= require angular-rails-templates
+#= require angular-yandex-map
 #= require_tree .

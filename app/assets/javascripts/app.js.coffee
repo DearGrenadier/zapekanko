@@ -1,1 +1,1 @@
-window.App = angular.module('zapekanko', [])
+window.app = angular.module('zapekanko', [])
