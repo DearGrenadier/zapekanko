@@ -12,6 +12,8 @@ directive 'chatCreation', ->
         center: [position.coords.latitude, position.coords.longitude]
         zoom: 15
       })
+      placemark = new ymaps.Placemark([position.coords.latitude, position.coords.longitude])
+      scope.map.geoObjects.add(placemark)
       scope.map.latitude = position.coords.latitude
       scope.map.longitude = position.coords.longitude
       scope.$apply()
