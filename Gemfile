@@ -47,7 +47,7 @@ end
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-angular'
-  gem 'rails-assets-c'
+  # gem 'rails-assets-angular-yandex-map'
 end
 
 gem 'thin'
