@@ -5,11 +5,10 @@ directive 'chatCreation', ->
   controller: 'ChatCreationCtrl'
   link: (scope) ->
     init = ->
-			navigator.geolocation.getCurrentPosition(setCenter) if navigator.geolocation?
-
-			scope.map = new ymaps.Map("map", {
-        center: [55.76, 37.64]
-        zoom: 7
+      navigator.geolocation.getCurrentPosition(setCenter) if navigator.geolocation != null
+    setCenter = (position) ->
+      scope.map = new ymaps.Map("map", {
+        center: [position.coords.latitude, position.coords.longitude]
+        zoom: 15
       })
     ymaps.ready(init)
-		debugger
