@@ -54,4 +54,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   root 'main#index'
+  resource :chat_rooms, only: [:create]
 end

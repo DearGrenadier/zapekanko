@@ -1,15 +1,13 @@
-default: &default
+development:
   clients:
     default:
-      database: mongoid
+      database: zapekanko_development
       hosts:
         - localhost:27017
 
-development:
-  <<: *default
-
-production:
-  <<: *default
-
 test:
-  <<: *default
+  clients:
+    default:
+      database: zapekanko_test
+      hosts:
+        - localhost:27017
