@@ -2,7 +2,8 @@ window.app.
 directive 'chatCreation', ->
   restrict: 'E'
   templateUrl: 'chat_creation/chat_creation_block.html'
-  controller: 'ChatCreationCtrl'
+  replace: true
+  scope: {map: '='}
   link: (scope) ->
     init = ->
       navigator.geolocation.getCurrentPosition(setCenter) if navigator.geolocation != null
@@ -11,4 +12,7 @@ directive 'chatCreation', ->
         center: [position.coords.latitude, position.coords.longitude]
         zoom: 15
       })
+      scope.map.latitude = position.coords.latitude
+      scope.map.longitude = position.coords.longitude
+      scope.$apply()
     ymaps.ready(init)
