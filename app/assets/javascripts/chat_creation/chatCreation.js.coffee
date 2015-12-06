@@ -3,7 +3,9 @@ directive 'chatCreation', ->
   restrict: 'E'
   templateUrl: 'chat_creation/chat_creation_block.html'
   replace: true
-  scope: {map: '='}
+  scope:
+    map: '='
+    chat: '='
   link: (scope) ->
     init = ->
       navigator.geolocation.getCurrentPosition(setCenter) if navigator.geolocation != null
@@ -14,7 +16,7 @@ directive 'chatCreation', ->
       })
       placemark = new ymaps.Placemark([position.coords.latitude, position.coords.longitude])
       scope.map.geoObjects.add(placemark)
-      scope.map.latitude = position.coords.latitude
-      scope.map.longitude = position.coords.longitude
+      scope.chat.latitude = position.coords.latitude
+      scope.chat.longitude = position.coords.longitude
       scope.$apply()
     ymaps.ready(init)

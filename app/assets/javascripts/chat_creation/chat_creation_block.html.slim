@@ -1,2 +1,13 @@
-div
-  #map
+.col-md-12
+  .col-md-9
+    #map
+  .col-md-3
+    .input-group
+      input.form-control ng-model='name' placeholder="Chat room name..."
+      span.input-group-btn
+        button.btn.btn-default type="button" ng-click='createChat()'
+          | Go!
+    h5
+      | longitude: {{chat.longitude}}
+    h5
+      | latitude: {{chat.latitude}}
